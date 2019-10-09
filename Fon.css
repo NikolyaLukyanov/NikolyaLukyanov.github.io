@@ -7,7 +7,7 @@ body{
 	
 }
 #border{
-	border-color: white;
+	border-top-color: white;
 	border-top-style: solid; 
 	border-top-width: 1.5px ; 
 	margin-top: 5%;
@@ -22,12 +22,34 @@ body{
 	text-align: left;
 	padding: 0%;
 	margin-top: 40%;
+	margin-left: 10%;
 	font-size: 500%;
 }
 .text2{
 	text-align: left;
 	padding: 0%;
 	margin-top: 1%;
+	margin-left: 10%;
 	font-size: 120%;
+	
+}
+.text3{
+	text-align: left;
+	padding-left: 10%;
+	padding-top: 0%; 
+	margin-top: 2%;
+	margin-left: 10%;
+	font-size: 300%;
+
+}
+
+#border2{
+	border-left-color: blue;
+	border-left-style: solid;
+	border-left-width: 3.5px; 
+	margin-left: 20%;
+	margin-top: 10%;
+	padding-top: 0%
+	padding-bottom:0%;
 	
 }
