@@ -35,7 +35,7 @@ body{
 }
 .text3{
 	text-align: left;
-	padding-left: 10%;
+	padding-left: 5%;
 	padding-top: 0%; 
 	margin-top: 2%;
 	margin-left: 10%;
@@ -48,8 +48,33 @@ body{
 	border-left-style: solid;
 	border-left-width: 3.5px; 
 	margin-left: 20%;
-	margin-top: 30%;
+	margin-top: 15%;
 	padding-top: 0%;
 	padding-bottom:0%;
+	
+}
+.text4{
+	text-align: left;
+	padding-left: 12%;
+	padding-top: 0%;
+	margin-top: 2%;
+	margin-left: 10%;
+	font-size: 100%
+
+}
+.text5{
+	color: blue;
+	margin-top:5%;
+	margin-left: 20%;
+	font-size: 600%;
+	text-align: left;
+}
+.text6{ 
+	text-align: left;
+    margin-top: -6%;
+    margin-left: 30%;
+    font-size: 200%;
+}
+.text7{
 	
 }
