@@ -12,10 +12,10 @@ body{
 }
 .text1{
 	color: white;
-	font-size: 160%;
+	font-size: 1.5em;
 	text-align: right;
-	padding-top: 2%;
-	padding-right: 2%;
+	padding-top: 0.6em;
+	padding-right: 0.6em;
 	
 }
 #outline{
@@ -23,5 +23,18 @@ body{
 	outline-color: white;
 	outline-style: solid;
 	margin: auto;
+
+}
+.head1{padding-right: 2.5em}
+.head2{padding-right: 2.5em}
+.head3{padding-right: 2.5em}
+#border{
+	border-top-color: white;
+	border-top-style:solid;
+	border-top-width: 1.5px;
+	margin-top: 1em;
+    margin-left:15em;
+    margin-right: 0.9em;
+
 
 }
