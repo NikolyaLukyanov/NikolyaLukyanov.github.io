@@ -76,7 +76,14 @@ body{
 .title4{
 	font-size: 1em;
 }
-
+.text4{
+	margin-top: 8em;
+    margin-left: 15em;
+}
+.R8{
+	color: blue;
+    font-size: 6em;
+}
 
 
 
