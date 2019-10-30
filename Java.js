@@ -1,3 +1,13 @@
-var arrow = document.getElementById('arrow'),
-  speed = 30;
-arrow.style.transform = 'rotate('+speed+'deg)';
+var speed = {
+	'trigger': '#speed-compare',
+	'target':'.modal_content .speedometer'
+};
+$(function() {
+	$(speed.trigger).on('click', function() {
+		setTimeout( function() { 
+			$(speed.target).each(function() {
+				$(this).addClass('play');
+			})
+		}, 1000);
+	})
+})
