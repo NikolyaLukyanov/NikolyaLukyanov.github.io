@@ -14,21 +14,21 @@ body{
 .text1{
 	color: white;
 	font-size: 1.5em;
-	text-align: right;
+	display: flex;
+	flex-direction: row;
 	padding-top: 0.6em;
 	padding-right: 0.6em;
-	
+	justify-content: flex-end;
 }
 #outline{
 	outline: 1px;
 	outline-color: white;
 	outline-style: solid;
-	margin: auto;
-
 }
 .head1{padding-right: 2.5em}
 .head2{padding-right: 2.5em}
 .head3{padding-right: 2.5em}
+.head4{padding-right: 1em;}
 #border{
 	border-top-color: white;
 	border-top-style:solid;
@@ -77,14 +77,41 @@ body{
 	font-size: 1em;
 }
 .text4{
-	margin-top: 8em;
-    margin-left: 15em;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    justify-items: stretch; 
+}
+.collum1{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-top: 7em;
+
+}
+.collu{
+	display: grid;
+	grid-template-columns: repeat(2,1fr); 
 }
 .R8{
 	color: blue;
-    font-size: 6em;
+    font-size: 7em;
+    padding-left: 1.5em;
 }
+.a{
+	padding-left: 2em;
+	padding-top: 2em;
+}
+.AGILITY{
+	color: white;
+	padding-top: 5em;
+	font-size: 1.8em;
 
+}
+.Build{
+	color: white;
+	padding-left: 5em;
+	font-size: 0.7em;
+}
 
 
 
