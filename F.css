@@ -141,8 +141,16 @@ body{
 	height: 100vh;
 	background-repeat: no-repeat;
 }
-
-
+.collu3{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+}
+.Lightning{
+	background-image: url(imagines/Lightning.jpg);
+	background-size: 70%;
+	height: 30vh;
+	background-repeat: no-repeat;
+}
 
 
 
