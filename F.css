@@ -154,4 +154,19 @@ body{
 }
 .w{
 	color: white;
+	padding-top: 9em;
+}
+.Cutting{
+	font-size: 1.8em;
+}
+.sharing{
+	font-size: 0.7em;
+}
+.table{
+	display: table;
+	width: 50%;
+	color:white;
+	border-spacing: 30px;
+	border-collapse:collapse;
+
 }
