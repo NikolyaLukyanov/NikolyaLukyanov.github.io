@@ -1,5 +1,0 @@
-FROM nginx
-
-
-COPY conf/nginx.conf /etc/enginx/enginx.conf
-COPYdocs/ /usr/share/nginx/html
