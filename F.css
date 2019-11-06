@@ -195,7 +195,7 @@ body{
 	padding-left: 2em
 }
 .t1{
-	padding-top: 2em;
+	padding-top: 1.5em;
 	text-align:left;
 	padding-bottom: 0.5em;
 	border-bottom-color: white;
@@ -203,10 +203,56 @@ body{
 	border-width: 0.5px;   
 }
 .t2{
-	padding-top: 2em;
+	padding-top: 1.5em;
 	text-align: right;
 	padding-bottom: 0.5em;
 	border-bottom-color: white;
 	border-bottom-style: solid;
 	border-width: 0.5px; 
+}
+.photo4{
+	background-image: url(imagines/Photo4.jpg);
+	background-size: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	margin: 0%;
+	background-color: black;
+}
+.photo5{
+	background-image: url(imagines/Photo5.jpg);
+	background-size: 100%;
+	height: 155vh;
+	background-repeat: no-repeat;
+	margin: 0%;
+	background-color: black;
+}
+.photomin{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: repeat(2,1fr);
+	width: 49.7%; 
+	height:100%; 
+}
+.picture1{
+    background-color: blue;
+}
+.picture2{
+	background-image: url(imagines/Picture2.jpg);
+	background-size: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	margin: 0%;
+	background-color: black;
+}
+.picture3{
+	background-image: url(imagines/Picture3.jpg);
+	background-size: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	margin: 0%;
+	background-color: black;
+}
+.picture4{
+	background-color: white;
+	color: grey;
 }
