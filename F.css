@@ -243,3 +243,10 @@ body{
 	background-color: white;
 	color: grey;
 }
+.dis{
+	display: flex;
+	flex-direction: row;
+	color: white;
+	position: center;
+	opacity: .5;
+}
