@@ -270,9 +270,24 @@ body{
 	margin-left: 3em;
 }
 .dis{
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns:repeat(3,1fr);
 	color: white;
-	position: center;
+	text-align:center;		
+}
+.number{
+	font-size: 6em;
+}
+.before{
 	opacity: .5;
+	font-size: 1em;
+	margin-left: -2em;
+	text-align:center;
+
+}
+.left{
+	padding-left: 1em;
+}
+.min{
+	padding-right: 50px;
 }
