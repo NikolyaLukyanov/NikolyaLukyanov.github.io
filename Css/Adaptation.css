@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 768px){
+@media all and (max-device-width: 768px){
 	.text1{
 		font-size: 2vh;
 	}
@@ -15,5 +15,87 @@
 	}
 	.head3{
 		padding-right: 2.5vh;
+	}
+	#border{
+		margin-left: 10%;
+	}
+	.photo1{
+		height: 155%;
+	}
+	.text2{
+		padding-top: 35%;
+		padding-left: 10%;
+	}
+	.title1{
+		font-size: 3em;
+	}
+	.title2{
+		font-size: 1em;
+	}
+	.photo2{
+		height: 150%;
+	}
+	.text3{
+		padding-top: 5%;
+		padding-left: 15%;
+	}
+	.text4{
+		height: 13em;
+	}
+	.collum1{
+		padding-top: 7%;
+		padding-bottom: 0%;
+	}
+	.R8{
+		padding-left: 2%;
+		padding-bottom: 0%;
+	}
+	.a{
+		padding-left: 2em;
+		padding-top: 2em;
+		padding-bottom: 0%;
+	}
+	.collum2{
+		padding-top: 2em;
+	}
+	.position{
+		margin-top: 20em;
+	}
+	.wrapper{
+		top: 63em;
+		bottom: 0em;
+	}
+	.P{
+		padding-left: 18em;
+		padding-top: 2em;
+		padding-bottom: 0em;
+		margin-bottom: 0em;
+	}
+	.Lightning{
+		margin-top: 5vh;
+	}
+	.w{
+		padding-top: 4em;
+	}
+	.photo3{
+		height: 155%;
+	}
+	#border3{
+		margin-top:5em;
+		margin-bottom: 1em;
+	}
+	.title5{
+	    padding-left: 1em;
+	    padding-top:2em; 
+	}
+	.text5{
+		padding-top: 7em;
+	}
+	.table{
+		padding-top: 0em;
+	}
+	.photomin{
+		width: 40em; 
+	    height:50em;
 	}
 }
