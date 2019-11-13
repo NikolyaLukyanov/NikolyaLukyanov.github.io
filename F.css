@@ -184,7 +184,7 @@ body{
 	padding-left: 2em
 }
 .t1{
-	padding-top: 1.5em;
+	padding-top: 1em;
 	text-align:left;
 	padding-bottom: 0.5em;
 	border-bottom-color: white;
@@ -192,7 +192,7 @@ body{
 	border-width: 0.5px;   
 }
 .t2{
-	padding-top: 1.5em;
+	padding-top: 1em;
 	text-align: right;
 	padding-bottom: 0.5em;
 	border-bottom-color: white;
