@@ -1,0 +1,352 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-device-height: 811px)
+{
+	.text1{
+		font-size: 2em;
+	}
+	#border{
+		margin-top: 1.5%;
+		margin-right: 1%;
+		margin-left: 20%;
+	}
+	.head1{
+		padding-right: 2.5em;
+	}
+	.head2{
+		padding-right: 2.5em;
+	}
+	.head3{
+		padding-right: 2.5em;
+	}
+	#border2{
+		margin-left: 10%;
+	}
+	.photo1{
+		height: 155%;
+	}
+	.text2{
+		padding-top: 20em;
+		padding-left: 10em;
+	}
+	.title1{
+		font-size: 2em;
+	}
+	.title2{
+		font-size: 1em;
+	}
+	.photo2{
+		height: 150%;
+	}
+	.text3{
+		padding-top: 5%;
+		padding-left: 15%;
+	}
+	.text4{
+		height: 13em;
+	}
+	.collum1{
+		padding-top: 7%;
+		padding-bottom: 0%;
+	}
+	.R8{
+		padding-left: 2%;
+		padding-bottom: 0%;
+	}
+	.a{
+		padding-left: 2em;
+		padding-top: 2em;
+		padding-bottom: 0%;
+	}
+	.collum2{
+		padding-top: 2em;
+	}
+	.position{
+		margin-top: 0em;
+	}
+	.wrapper{
+		top: 1150px;
+		bottom: 0em;
+		position: absolute;
+	}
+	.P{
+		padding-left: 18em;
+		padding-top: 2em;
+		padding-bottom: 0em;
+		margin-bottom: 0em;
+	}
+	.Lightning{
+		margin-top: 5vh;
+	}
+	.w{
+		padding-top: 4em;
+	}
+	.photo3{
+		height: 155%;
+	}
+	#border3{
+		margin-top:5em;
+		margin-bottom: 1em;
+	}
+	.title5{
+	    padding-left: 1em;
+	    padding-top:2em; 
+	}
+	.text5{
+		padding-top: 7em;
+	}
+	.table{
+		padding-top: 0em;
+	}
+	.photo4{
+		height:155%;
+	}
+	.photomin{
+		width: 40em; 
+	    height:33em;
+	}
+	.tp1{
+		font-size: 1.6em;
+
+	}
+	.tpp1{
+		font-size: 0.5em;
+		padding-left: 20em;
+	}
+	.photo5{
+		height: 700px;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (min-device-height: 823px)
+{
+	.text1{
+		font-size: 2em;
+	}
+	#border{
+		margin-top: 1.5%;
+		margin-right: 1%;
+		margin-left: 20%;
+	}
+	.head1{
+		padding-right: 2.5em;
+	}
+	.head2{
+		padding-right: 2.5em;
+	}
+	.head3{
+		padding-right: 2.5em;
+	}
+	#border2{
+		margin-left: 10%;
+	}
+	.photo1{
+		height: 155%;
+	}
+	.text2{
+		padding-top: 20em;
+		padding-left: 10em;
+	}
+	.title1{
+		font-size: 2em;
+	}
+	.title2{
+		font-size: 1em;
+	}
+	.photo2{
+		height: 150%;
+	}
+	.text3{
+		padding-top: 5%;
+		padding-left: 15%;
+	}
+	.text4{
+		height: 13em;
+	}
+	.collum1{
+		padding-top: 7%;
+		padding-bottom: 0%;
+	}
+	.R8{
+		padding-left: 2%;
+		padding-bottom: 0%;
+	}
+	.a{
+		padding-left: 2em;
+		padding-top: 2em;
+		padding-bottom: 0%;
+	}
+	.collum2{
+		padding-top: 2em;
+	}
+	.position{
+		margin-top: 0em;
+	}
+	.wrapper{
+		top: 76em;
+		bottom: 0em;
+		position: absolute;
+	}
+	.P{
+		padding-left: 18em;
+		padding-top: 2em;
+		padding-bottom: 0em;
+		margin-bottom: 0em;
+	}
+	.Lightning{
+		margin-top: 5vh;
+	}
+	.w{
+		padding-top: 4em;
+	}
+	.photo3{
+		height: 155%;
+	}
+	#border3{
+		margin-top:5em;
+		margin-bottom: 1em;
+	}
+	.title5{
+	    padding-left: 1em;
+	    padding-top:2em; 
+	}
+	.text5{
+		padding-top: 7em;
+	}
+	.table{
+		padding-top: 0em;
+	}
+	.photo4{
+		height:155%;
+	}
+	.photomin{
+		width: 40em; 
+	    height:33em;
+	}
+	.tp1{
+		font-size: 1.6em;
+
+	}
+	.tpp1{
+		font-size: 0.5em;
+		padding-left: 20em;
+	}
+	.photo5{
+		height: 700px;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (min-device-height: 811px) and (max-device-height: 823px) 
+{
+	.text1{
+		font-size: 2em;
+	}
+	#border{
+		margin-top: 1.5%;
+		margin-right: 1%;
+		margin-left: 20%;
+	}
+	.head1{
+		padding-right: 2.5em;
+	}
+	.head2{
+		padding-right: 2.5em;
+	}
+	.head3{
+		padding-right: 2.5em;
+	}
+	#border2{
+		margin-left: 10%;
+	}
+	.photo1{
+		height: 155%;
+	}
+	.text2{
+		padding-top: 20em;
+		padding-left: 10em;
+	}
+	.title1{
+		font-size: 2em;
+	}
+	.title2{
+		font-size: 1em;
+	}
+	.photo2{
+		height: 150%;
+	}
+	.text3{
+		padding-top: 5%;
+		padding-left: 15%;
+	}
+	.text4{
+		height: 13em;
+	}
+	.collum1{
+		padding-top: 7%;
+		padding-bottom: 0%;
+	}
+	.R8{
+		padding-left: 2%;
+		padding-bottom: 0%;
+	}
+	.a{
+		padding-left: 2em;
+		padding-top: 2em;
+		padding-bottom: 0%;
+	}
+	.collum2{
+		padding-top: 2em;
+	}
+	.position{
+		margin-top: 0em;
+	}
+	.wrapper{
+		top: 79em;
+		bottom: 0em;
+		position: absolute;
+	}
+	.P{
+		padding-left: 18em;
+		padding-top: 2em;
+		padding-bottom: 0em;
+		margin-bottom: 0em;
+	}
+	.Lightning{
+		margin-top: 5vh;
+	}
+	.w{
+		padding-top: 4em;
+	}
+	.photo3{
+		height: 155%;
+	}
+	#border3{
+		margin-top:5em;
+		margin-bottom: 1em;
+	}
+	.title5{
+	    padding-left: 1em;
+	    padding-top:2em; 
+	}
+	.text5{
+		padding-top: 7em;
+	}
+	.table{
+		padding-top: 0em;
+	}
+	.photo4{
+		height:155%;
+	}
+	.photomin{
+		width: 40em; 
+	    height:33em;
+	}
+	.tp1{
+		font-size: 1.6em;
+
+	}
+	.tpp1{
+		font-size: 0.5em;
+		padding-left: 20em;
+	}
+	.photo5{
+		height: 700px;
+	}
+}
+

@@ -1,25 +1,25 @@
 .position{
-	margin-top: 20em;
+	margin-top: 0em;
 }
 .wrapper {
   position: absolute;
   left: -10%;
   right: 0;
-  top: 86em;
+  top: 100em;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
 .speedometer {
   overflow: hidden;
-  width: 210px;
-  height: 120px;
+  width: 100em;
+  height: 35em;
   position: relative;
-  margin: 20px auto;
+  margin: 20em auto;
 }
 .speedometer::after {
   background-color: #fff;
-  height: 10px;
+  height: 0em;
   width: 130px;
   margin: 0 auto;
   left: 0;
@@ -31,28 +31,29 @@
   right: 0;
 }
 .speedometer .dial {
-  padding-top: 20px;
+  padding-top: 1em;
   overflow: hidden;
 }
 .speedometer .needle {
   position: absolute;
   left: 0;
   right: 0;
-  top: 2px;
-  width: 12px;
+  top: 0.1em;
+  width: 0.5em;
   margin: 0 auto;
   z-index: 50;
 }
 .speedometer .needle .inner {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMSBUaW55Ly9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLXRpbnkuZHRkIj48c3ZnIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9InRpbnkiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEycHgiIGhlaWdodD0iMTEzcHgiIHZpZXdCb3g9IjAgMCAxMiAxMTMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM2NzY3NjciIGQ9Ik0wLjA2NywxMDYuMzQ0Yy0wLjAxNiwwLjEzNS0wLjAyNCwwLjU0My0wLjAzMiwwLjY4MWwtMC4wMTIsMC40MTFoMC4wMDVjLTAuMDAxLDAtMC4wMTEtMC4xNDYtMC4wMTEtMC4wODFjMC4wMDYsMy4xOSwyLjY4OSw1LjYzNSw1Ljk5NSw1LjYyOWMzLjMwNC0wLjAwNyw1Ljk3OC0yLjY2Niw1Ljk3MS01Ljg1NmMtMC4wMDEtMC40MTUtMC4wNS0wLjg1My0wLjEzNi0xLjI0Mkw2LjAxMiwwLjEyNEwwLjA2NywxMDYuMzQ0eiIvPjwvc3ZnPg==);
   background-size: 100%;
-  height: 112px;
-  width: 12px;
+  height: 7em;
+  width: 1em;
   position: relative;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
+  background-repeat: no-repeat;
 }
 .speedometer .needle .top,
 .speedometer .needle .bottom {
@@ -68,10 +69,10 @@
 .speedometer .bar {
   position: relative;
   overflow: hidden;
-  height: 95px;
+  height: 6em;
 }
 .speedometer .half-circle {
-  height: 95px;
+  height: 6em;
   width: 190px;
   border-radius: 190px 190px 0 0;
   margin: 0 auto;
