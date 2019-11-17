@@ -1,6 +1,7 @@
-@media all and (max-width:768px){
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (max-device-height: 811px)
+{
 	.text1{
-		font-size: 2vh;
+		font-size: 2em;
 	}
 	#border{
 		margin-top: 1.5%;
@@ -8,26 +9,26 @@
 		margin-left: 20%;
 	}
 	.head1{
-		padding-right: 2.5vh;
+		padding-right: 2.5em;
 	}
 	.head2{
-		padding-right: 2.5vh;
+		padding-right: 2.5em;
 	}
 	.head3{
-		padding-right: 2.5vh;
+		padding-right: 2.5em;
 	}
-	#border{
+	#border2{
 		margin-left: 10%;
 	}
 	.photo1{
 		height: 155%;
 	}
 	.text2{
-		padding-top: 35%;
-		padding-left: 10%;
+		padding-top: 20em;
+		padding-left: 10em;
 	}
 	.title1{
-		font-size: 3em;
+		font-size: 2em;
 	}
 	.title2{
 		font-size: 1em;
@@ -59,11 +60,12 @@
 		padding-top: 2em;
 	}
 	.position{
-		margin-top: 20em;
+		margin-top: 0em;
 	}
 	.wrapper{
-		top: 64em;
+		top: 1150px;
 		bottom: 0em;
+		position: absolute;
 	}
 	.P{
 		padding-left: 18em;
@@ -94,8 +96,22 @@
 	.table{
 		padding-top: 0em;
 	}
+	.photo4{
+		height:155%;
+	}
 	.photomin{
-		width: 33em; 
+		width: 40em; 
 	    height:33em;
+	}
+	.tp1{
+		font-size: 1.6em;
+
+	}
+	.tpp1{
+		font-size: 0.5em;
+		padding-left: 20em;
+	}
+	.photo5{
+		height: 700px;
 	}
 }
