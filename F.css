@@ -1,7 +1,10 @@
 body{
 	margin: 0%
 }
-
+a{
+	text-decoration: none;
+	color: white;
+}
 .photo1{
 	background-image: url(imagines/Photo1.jpg);
 	background-position: top;
@@ -24,8 +27,6 @@ body{
 	outline-style: solid;
 }
 .head1{padding-right: 2.5em}
-.head2{padding-right: 2.5em}
-.head3{padding-right: 2.5em}
 .head4{padding-right: 1em;}
 #border{
 	border-top-color: white;
@@ -292,3 +293,24 @@ body{
 	padding-right: 50px;
 }
 
+/*=============Анимация==============*/
+
+.head1:hover{
+	color: white;
+	font-size: 1.2em;
+	text-decoration: none;
+	text-shadow:20px 20px 20px black;
+	opacity: 1;
+	transition: 0.3s
+}
+#outline:hover{
+	color: white;
+	font-size: 1.2em;
+	text-decoration: none;
+	text-shadow:20px 20px 20px black;
+	opacity: 1;
+	transition: 0.3s
+}
+.picture1:hover,.picture2:hover,.picture3:hover,.picture4:hover{
+	-webkit-transform: scale(1.1,1.1);
+}
