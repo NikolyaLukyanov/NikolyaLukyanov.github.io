@@ -4,8 +4,8 @@ body{
 a{
 	text-decoration: none;
 	color: white;
-}
-.photo1{
+	}
+	.photo1{
 	background-image: url(imagines/Photo1.jpg);
 	background-position: top;
 	background-size: 100%;
@@ -301,7 +301,7 @@ a{
 	text-decoration: none;
 	text-shadow:20px 20px 20px black;
 	opacity: 1;
-	transition: 0.3s
+	transition: 0.3s;
 }
 #outline:hover{
 	color: white;
@@ -309,7 +309,7 @@ a{
 	text-decoration: none;
 	text-shadow:20px 20px 20px black;
 	opacity: 1;
-	transition: 0.3s
+	transition: 0.3s;
 }
 .picture1:hover,.picture2:hover,.picture3:hover,.picture4:hover{
 	-webkit-transform: scale(1.1,1.1);
