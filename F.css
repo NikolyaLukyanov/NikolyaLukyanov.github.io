@@ -91,7 +91,7 @@ a{
     padding-left: 1.5em;
     padding-top: 0.07em;
 }
-.a{
+.nexttoR8{
 	padding-left: 2em;
 	padding-top: 2em;
 }
@@ -115,7 +115,7 @@ a{
 	display: grid;
 	grid-template-columns: repeat(2,1fr); 
 }
-.P{
+.Per{
 	padding-left: 8em;
 	color: white;
 	padding-top: 2em;
@@ -144,7 +144,7 @@ a{
 	height: 100vh;
 	background-repeat: no-repeat;
 }
-.w{
+.Cut{
 	color: white;
 	padding-top: 9em;
 }
@@ -184,7 +184,7 @@ a{
 	padding-top: 2em;
 	padding-left: 2em
 }
-.t1{
+.tab1{
 	padding-top: 1em;
 	text-align:left;
 	padding-bottom: 0.5em;
@@ -192,7 +192,7 @@ a{
 	border-bottom-style: solid;
 	border-width: 0.5px;   
 }
-.t2{
+.tab2{
 	padding-top: 1em;
 	text-align: right;
 	padding-bottom: 0.5em;
@@ -233,12 +233,12 @@ a{
 	margin-top: 5em;
 	margin-left: 3em;
 }
-.tp1{
+.pover{
 	font-size: 5vh;
 	padding-left: 1em;
 	line-height: 0.3em;
 }
-.tpp1{
+.Learn{
 	padding-left: 14em;
 	padding-top:3em;
 }
