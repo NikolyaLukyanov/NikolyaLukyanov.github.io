@@ -1,0 +1,14 @@
+body{
+	margin: 0%;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.Button{
+	display: flex;
+	flex-direction: row;
+}
+.a{
+	padding-left: 20px;
+}
