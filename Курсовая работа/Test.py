@@ -49,12 +49,23 @@ with open ( 'vk.json', encoding='utf-8' ) as json_file:
             with connection.cursor () as cursor:
                 # Create a new record
                 sql="INSERT INTO `json` (`id` , `first_name`,`last_name`,`is_closed`,`can_access_closed`,`bdate`, `city`,`mobile_phone`,`music`) VALUES (%s,%s ,%s ,%s ,%s ,%s ,%s,%s,%s )"
-                cursor.execute ( sql, (item.get ( 'id' ), item.get ( 'first_name' ), item.get ( 'last_name' ), item.get('is_closed'), item.get('can_access_closed'),item.get('bdate'), item.get('city',['title']),item.get('mobile_phone'),item.get('music') ) )
+                cursor.execute ( sql, (item.get ( 'id' ), item.get ( 'first_name' ), item.get ( 'last_name' ), item.get('is_closed'), item.get('can_access_closed'),item.get('bdate'), item.get('city').get('title') ,item.get('mobile_phone'),item.get('music') ) )
 
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
             connection.commit ()
         except Exception:
-            print ( "Error" )
+            with connection.cursor () as cursor:
+                # Create a new record
+                sql="INSERT INTO `json` (`id` , `first_name`,`last_name`,`is_closed`,`can_access_closed`,`bdate`, `city`,`mobile_phone`,`music`) VALUES (%s,%s ,%s ,%s ,%s ,%s ,%s,%s,%s )"
+                cursor.execute ( sql, (
+                item.get ( 'id' ), item.get ( 'first_name' ), item.get ( 'last_name' ), item.get ( 'is_closed' ),
+                item.get ( 'can_access_closed' ), item.get ( 'bdate' ),
+                item.get ( 'city', ['null'] ), item.get ( 'mobile_phone' ),
+                item.get ( 'music' )) )
+
+                # connection is not autocommit by default. So you must commit to save
+                # your changes.
+            connection.commit ()
 
     connection.close ()
