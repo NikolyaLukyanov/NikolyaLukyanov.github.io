@@ -2,7 +2,7 @@ import requests
 import json
 import pymysql.cursors
 
-token='a2e36e944afa0151bcdf258cee7823197472c0160644bd5127ecad298ff0d95314980811ee4047efcf266'
+token='ca516c97f990d1b1b29ae0fc6f476a79fa52b81ae217fc14f4421881c6cf401c98c5f9ae4e1b3e8d7af37'
 version=5.103
 extended=1
 
@@ -121,9 +121,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['1'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -269,9 +269,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['2'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -417,9 +417,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['3'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -564,9 +564,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['4'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -711,9 +711,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['5'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -858,9 +858,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['6'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -1005,9 +1005,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['7'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -1152,9 +1152,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['8'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -1299,9 +1299,9 @@ with open ( 'vkq.json' ) as json_file:
 
             with connection.cursor () as cursor:
                 # Create a new record
-                sql="INSERT INTO `wall` (`post_type`,`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s,%s )"
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
                 cursor.execute (sql,(
-                item.get ( 'post_type' ), item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
                 item.get('reposts').get('count'),item.get('ID_p',['8'])))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
@@ -1334,6 +1334,154 @@ with open ( 'vkw.json' ) as json_file:
         except Exception:
             print("Error")
 connection.close ()
+class dany_epifanov:
+    id='id160504052'
+    ids='160504052'
+    all_posts=[]
+    all_walls=[]
+    all_groups=[]
+    fields='about,bdate,city,contacts,counters,music'
+    offset=0
+
+    def take_1_posts(self):
+            response=requests.get ( 'https://api.vk.com/method/users.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'user_ids': self.id,
+                                        'fields': self.fields
+
+                                    } )
+            data=response.json ()['response']
+            self.all_posts.extend ( data )
+            return self.all_posts
+    def take_1_walls (self):
+            response1=requests.get ( 'https://api.vk.com/method/wall.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'domain': self.id,
+                                    })
+            data=response1.json ()['response']['items']
+            self.all_walls.extend ( data )
+            return self.all_walls
+
+    def take_1_groups(self):
+
+              response2=requests.get ( 'https://api.vk.com/method/groups.get',
+                                 params={
+                                     'access_token': token,
+                                     'v': version,
+                                     'user_id': self.ids,
+                                     'extended': extended,
+                                 } )
+              data=response2.json ()['response']['items']
+              self.all_groups.extend ( data )
+              return self.all_groups
+
+dany_e=dany_epifanov()
+dany_e.take_1_posts()
+with open ( 'vk.json', "w", encoding='utf-8' ) as file:
+    json.dump (dany_e.take_1_posts(), file )
+dany_e=dany_epifanov()
+dany_e.take_1_walls()
+with open ( 'vkq.json', "w", encoding='utf-8' ) as file:
+    json.dump (dany_e.take_1_walls(), file )
+dany_e=dany_epifanov()
+dany_e.take_1_groups()
+with open ( 'vkw.json', "w", encoding='utf-8' ) as file:
+    json.dump (dany_e.take_1_groups(), file )
+
+
+with open ('vk.json') as json_file:
+    post = json.load(json_file)
+    print(post)
+connection = pymysql.connect(host='127.0.0.1',
+                             user='root',
+                             password='Basketboll2002',
+                             db='mydb',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with open ( 'vk.json' ) as json_file:
+    post=json.load ( json_file )
+    for item in post:
+        try:
+
+            with connection.cursor () as cursor:
+                # Create a new record
+                sql="INSERT INTO `json` (`id` , `first_name`,`last_name`,`is_closed`,`can_access_closed`,`bdate`, `city`,`mobile_phone`,`home_phone`,`friends`,`music`,`about`,`ID_p`) VALUES (%s,%s ,%s ,%s ,%s ,%s ,%s,%s,%s,%s,%s,%s,%s )"
+                cursor.execute ( sql,(
+                item.get ( 'id' ), item.get ( 'first_name' ), item.get ( 'last_name' ), item.get ( 'is_closed' ),
+                item.get ( 'can_access_closed' ), item.get ( 'bdate' ), item.get ( 'city' ).get ( 'title' ),
+                item.get ( 'mobile_phone' ), item.get ( 'home_phone' ), item.get ( 'counters' ).get ( 'friends' ),
+                item.get ( 'music' ), item.get ( 'about' ),item.get('ID_p',['9'])) )
+                # connection is not autocommit by default. So you must commit to save
+                # your changes.
+            connection.commit ()
+        except Exception:
+            with connection.cursor () as cursor:
+                # Create a new record
+                sql="INSERT INTO `json` (`id` , `first_name`,`last_name`,`is_closed`,`can_access_closed`,`bdate`, `city`,`mobile_phone`,`home_phone`,`friends`,`music`,`about`,`ID_p`) VALUES (%s,%s ,%s ,%s ,%s ,%s ,%s,%s,%s,%s,%s,%s,%s )"
+                cursor.execute ( sql,(
+                item.get ( 'id' ), item.get ( 'first_name' ), item.get ( 'last_name' ), item.get ( 'is_closed' ),
+                item.get ( 'can_access_closed' ), item.get ( 'bdate' ), item.get ( 'city',['null'] ),
+                item.get ( 'mobile_phone' ), item.get ( 'home_phone' ), item.get ( 'counters' ).get ( 'friends' ),
+                item.get ( 'music' ), item.get ( 'about' ),item.get('ID_p',['9'])) )
+connection.close ()
+with open ('vkq.json') as json_file:
+    post = json.load(json_file)
+    print(post)
+connection = pymysql.connect(host='127.0.0.1',
+                             user='root',
+                             password='Basketboll2002',
+                             db='mydb',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with open ( 'vkq.json' ) as json_file:
+    post=json.load ( json_file )
+    for item in post:
+        try:
+
+            with connection.cursor () as cursor:
+                # Create a new record
+                sql="INSERT INTO `wall` (`text`,`likes`,`comments`,`reposts`,`ID_p`) VALUES (%s,%s,%s,%s,%s )"
+                cursor.execute (sql,(
+                item.get ( 'text' ),item.get('likes').get('count'),item.get('comments').get('count'),
+                item.get('reposts').get('count'),item.get('ID_p',['9'])))
+                # connection is not autocommit by default. So you must commit to save
+                # your changes.
+            connection.commit ()
+        except Exception:
+            print("Error")
+connection.close ()
+with open ('vkw.json') as json_file:
+    post = json.load(json_file)
+    print(post)
+connection = pymysql.connect(host='127.0.0.1',
+                             user='root',
+                             password='Basketboll2002',
+                             db='mydb',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+with open ( 'vkw.json' ) as json_file:
+    post=json.load ( json_file )
+    for item in post:
+        try:
+                with connection.cursor () as cursor:
+                    # Create a new record
+                    sql="INSERT INTO `grup` (`id_grup`,`name_grup`,`screen_name_grup`,`ID_p`) VALUES (%s,%s,%s,%s )"
+                    cursor.execute ( sql, (
+                        item.get ( 'id' ), item.get ( 'name' ), item.get ( 'screen_name' ),item.get('ID_p',['9'])) )
+                    # connection is not autocommit by default. So you must commit to save
+                    # your changes.
+                connection.commit ()
+        except Exception:
+            print("Error")
+connection.close ()
+
 
 
 
