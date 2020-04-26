@@ -1,6 +1,8 @@
-import requests
 import json
+
 import pymysql.cursors
+import requests
+
 token='9960201fe990557f6ae56e2c7b041dd81abe0b4a6aff07979a0f8baddfc583bae18dd8cc1d6f19d186689'
 version=5.103
 extended=1
@@ -179,4 +181,5 @@ People23=People('id132033643','132033643','23')
 with open ( 'vk.json', "w", encoding='utf-8' ) as file:
     json.dump (People23.users(), file )
 People23.sql ()
+
 import Grups

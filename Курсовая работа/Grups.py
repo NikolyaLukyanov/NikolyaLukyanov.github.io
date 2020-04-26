@@ -41,7 +41,7 @@ class People(object):
                 try:
                     with connection.cursor () as cursor:
                         # Create a new record
-                        sql="INSERT INTO `grup` (`№`,`id_grup`,`name_grup`,`screen_name_grup`,`json_has_wall_idjson_has_wall`) VALUES (%s,%s,%s,%s )"
+                        sql="INSERT INTO `grups` (`№`,`id_grup`,`name_grup`,`screen_name_grup`) VALUES (%s,%s,%s,%s )"
                         cursor.execute ( sql, (
                             item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'name' ),
                             item.get ( 'screen_name' )) )
@@ -156,10 +156,6 @@ if __name__ == "__main__":
         json.dump ( People20.users (), file )
     People20.sql ()
 
-    People21=People ( 'id72511618', '72511618', '21' )
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People21.users (), file )
-    People21.sql ()
 
     People22=People ( 'id192260451', '192260451', '22' )
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
@@ -170,4 +166,5 @@ if __name__ == "__main__":
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
         json.dump ( People23.users (), file )
     People23.sql ()
+
 import Wall
