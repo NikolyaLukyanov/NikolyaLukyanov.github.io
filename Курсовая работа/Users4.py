@@ -53,36 +53,30 @@ class People(object):
                         # your changes.
                     connection.commit ()
                 except Exception:
-                  print ( "Error" )
+                    print ( "Error" )
         connection.close ()
 
 if __name__ == "__main__":
-    People1=People('id155384397','155384397','1')
-    People1.users()
+    People13=People('id164519173','164519173','13')
+    People13.users()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People1.users(), file )
-    People1.sql ()
+      json.dump (People13.users(), file )
+    People13.sql ()
 
-    People2=People('id122123897','122123897','2')
-    People2.users()
+    People14=People('id253456309','253456309','14')
+    People14.users()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People2.users(), file )
-    People2.sql ()
+      json.dump (People14.users(), file )
+    People14.sql ()
 
-    People3=People('id226165635','226165635','3')
-    People3.users()
+    People15=People('id203884671','203884671','15')
+    People15.users()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People3.users(), file )
-    People3.sql ()
+      json.dump (People15.users(), file )
+    People15.sql ()
 
-    People4=People('id204756182','204756182','4')
-    People4.users()
+    People16=People('id205840517','205840517','16')
+    People16.users()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People4.users(), file )
-    People4.sql ()
-
-
-
-
-
-
+      json.dump (People16.users(), file )
+    People16.sql ()

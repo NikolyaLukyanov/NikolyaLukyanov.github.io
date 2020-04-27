@@ -57,32 +57,28 @@ class People(object):
         connection.close ()
 
 if __name__ == "__main__":
-    People1=People('id155384397','155384397','1')
-    People1.users()
+    People17=People ( 'id487119415', '487119415', '17' )
+    People17.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People1.users(), file )
-    People1.sql ()
+        json.dump ( People17.users (), file )
+    People17.sql ()
 
-    People2=People('id122123897','122123897','2')
-    People2.users()
+    People18=People ( 'id18864498', '18864498', '18' )
+    People18.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People2.users(), file )
-    People2.sql ()
+        json.dump ( People18.users (), file )
+    People18.sql ()
 
-    People3=People('id226165635','226165635','3')
-    People3.users()
+    People19=People ( 'id444545086', '18864498', '19' )
+    People19.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People3.users(), file )
-    People3.sql ()
+        json.dump ( People19.users (), file )
+    People19.sql ()
 
-    People4=People('id204756182','204756182','4')
-    People4.users()
+    People20=People ( 'id547652798', '547652798', '20' )
+    People20.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People4.users(), file )
-    People4.sql ()
-
-
-
-
+        json.dump ( People20.users (), file )
+    People20.sql ()
 
 
