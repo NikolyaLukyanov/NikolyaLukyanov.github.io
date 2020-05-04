@@ -2,18 +2,17 @@ import requests
 import json
 import pymysql.cursors
 
-token='cb5a76303377bb8850962443835d335fedae3537b57449adb974329490bbd989738d5816a80aa9a223d86'
+token='78814dcb6c1a9d89d9f6eda7ab9cd440379e10319320d433a35ea0258703713e2c6d2346974fdb3a6b406'
 version=5.103
 extended=1
 
 class People(object):
 
-    def __init__(self, id, ids,offset,id_wall):
+    def __init__(self, id, ids, offset, id_wall):
         self.id= id
         self.ids=ids
         self.offset=offset
         self.id_wall=id_wall
-
     def users(self):
         id_friend=[]
         type= 'post'
@@ -42,13 +41,13 @@ class People(object):
 
         with open ( 'vk.json' ) as json_file:
             post=json.load ( json_file )
-            for post in post:
+            for item in post:
                 try:
                     with connection.cursor () as cursor:
                         # Create a new record
-                        sql="INSERT INTO `likes` (`№`,`id_wall`,`id_friend`) VALUES (%s,%s,%s)"
+                        sql="INSERT INTO `likes` (`№`,`id_wall`,`id_friends`) VALUES (%s,%s ,%s)"
                         cursor.execute ( sql, (
-                            post.get ( '№', [self.offset] ),post.get ( 'id',[self.id_wall] ), post.get ('id_friend',[post])) )
+                            item.get ( '№', [self.offset] ), item.get ( 'id_wall',[self.id_wall] ), item.get ( 'id_friends',[post] )) )
                         # connection is not autocommit by default. So you must commit to save
                         # your changes.
                     connection.commit ()
@@ -62,116 +61,116 @@ if __name__ == "__main__":
         json.dump ( People1.users (), file )
     People1.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '705' )
-    People1.users ()
+    People2=People ( 'id155384397', '155384397', '1', '705' )
+    People2.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People2.users (), file )
+    People2.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '686' )
-    People1.users ()
+    People3=People ( 'id155384397', '155384397', '1', '686' )
+    People3.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People3.users (), file )
+    People3.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '685' )
-    People1.users ()
+    People4=People ( 'id155384397', '155384397', '1', '685' )
+    People4.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People4.users (), file )
+    People4.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '684' )
-    People1.users ()
+    People5=People ( 'id155384397', '155384397', '1', '684' )
+    People5.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People5.users (), file )
+    People5.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '676' )
-    People1.users ()
+    People6=People ( 'id155384397', '155384397', '1', '676' )
+    People6.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People6.users (), file )
+    People6.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '671' )
-    People1.users ()
+    People7=People ( 'id155384397', '155384397', '1', '671' )
+    People7.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People7.users (), file )
+    People7.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '669' )
-    People1.users ()
+    People8=People ( 'id155384397', '155384397', '1', '669' )
+    People8.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People8.users (), file )
+    People8.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '668' )
-    People1.users ()
+    People9=People ( 'id155384397', '155384397', '1', '668' )
+    People9.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People9.users (), file )
+    People9.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '666' )
-    People1.users ()
+    People10=People ( 'id155384397', '155384397', '1', '666' )
+    People10.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People10.users (), file )
+    People10.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '664' )
-    People1.users ()
+    People11=People ( 'id155384397', '155384397', '1', '664' )
+    People11.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People11.users (), file )
+    People11.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '661' )
-    People1.users ()
+    People12=People ( 'id155384397', '155384397', '1', '661' )
+    People12.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People12.users (), file )
+    People12.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '660' )
-    People1.users ()
+    People13=People ( 'id155384397', '155384397', '1', '660' )
+    People13.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People13.users (), file )
+    People13.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '659' )
-    People1.users ()
+    People14=People ( 'id155384397', '155384397', '1', '659')
+    People14.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People14.users (), file )
+    People14.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '654' )
-    People1.users ()
+    People15=People ( 'id155384397', '155384397', '1', '654')
+    People15.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People15.users (), file )
+    People15.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '653' )
-    People1.users ()
+    People16=People ( 'id155384397', '155384397', '1', '653' )
+    People16.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People16.users (), file )
+    People16.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '650' )
-    People1.users ()
+    People17=People ( 'id155384397', '155384397', '1', '650' )
+    People17.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People17.users (), file )
+    People17.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '648' )
-    People1.users ()
+    People18=People ( 'id155384397', '155384397', '1', '648' )
+    People18.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People18.users (), file )
+    People18.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '643' )
-    People1.users ()
+    People19=People ( 'id155384397', '155384397', '1', '643' )
+    People19.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People19.users (), file )
+    People19.sql ()
 
-    People1=People ( 'id155384397', '155384397', '1', '636' )
-    People1.users ()
+    People20=People ( 'id155384397', '155384397', '1', '636' )
+    People20.users ()
     with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-        json.dump ( People1.users (), file )
-    People1.sql ()
+        json.dump ( People20.users (), file )
+    People20.sql ()
