@@ -1,12 +1,9 @@
-import json
-
 import pymysql.cursors
 import requests
 
-token='cb5a76303377bb8850962443835d335fedae3537b57449adb974329490bbd989738d5816a80aa9a223d86'
+token='f906ab30c793e12b04822edd83a439d5f68cd6a9f151bc86693b5e99ad13216d4ac92ad37623fca3db7e9'
 version=5.103
 extended=1
-
 class People(object):
     fields='bdate, mobile_phone,home_phone,friends,music,about'
     def __init__(self, id, ids,offset):
@@ -15,31 +12,32 @@ class People(object):
         self.offset=offset
 
     def users(self):
+       global id_wall
        user=[]
-       response=requests.get ( 'https://api.vk.com/method/users.get',
-                                    params={
-                                        'access_token': token,
-                                        'v': version,
-                                        'user_ids': self.id,
-                                        'fields': self.fields
+       group=[]
+       wall=[]
+       friend=[]
+       like=[]
+       def users():
+           response=requests.get ( 'https://api.vk.com/method/users.get',
+                                   params={
+                                       'access_token': token,
+                                       'v': version,
+                                       'user_ids': self.id,
+                                       'fields': self.fields
 
-                                    } )
-       data=response.json ()['response']
-       user.extend ( data )
-       return user
+                                   } )
+           data=response.json ()['response']
+           user.extend ( data )
+           return user
+       user=users()
 
-    def sql(self):
-        with open ( 'vk.json' ) as json_file:
-            post=json.load ( json_file )
-            print ( post )
-        connection=pymysql.connect ( host='127.0.0.1',
-                                     user='root',
-                                     password='Basketboll2002',
-                                     db='mydb' )
+       connection=pymysql.connect ( host='127.0.0.1',
+                                         user='root',
+                                         password='Basketboll2002',
+                                         db='mydb' )
 
-        with open ( 'vk.json' ) as json_file:
-            post=json.load ( json_file )
-            for item in post:
+       for item in user:
                 try:
                     with connection.cursor () as cursor:
                         # Create a new record
@@ -54,62 +52,180 @@ class People(object):
                     connection.commit ()
                 except Exception:
                     print ( "Error" )
-        connection.close ()
+       connection.close ()
+       def grups():
+
+           response2=requests.get ( 'https://api.vk.com/method/groups.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'user_id': self.ids,
+                                        'extended': extended,
+                                    } )
+           data=response2.json ()['response']['items']
+           group.extend ( data )
+           return group
+       group=grups()
+
+
+       connection=pymysql.connect ( host='127.0.0.1',
+                                        user='root',
+                                        password='Basketboll2002',
+                                        db='mydb',
+                                        charset='utf8mb4',
+                                        cursorclass=pymysql.cursors.DictCursor )
+
+       for item in group:
+                   try:
+                       with connection.cursor () as cursor:
+                           # Create a new record
+                           sql="INSERT INTO `grups` (`№`,`id_grup`,`name_grup`,`screen_name_grup`) VALUES (%s,%s,%s,%s )"
+                           cursor.execute ( sql, (
+                               item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'name' ),
+                               item.get ( 'screen_name' )) )
+                           # connection is not autocommit by default. So you must commit to save
+                           # your changes.
+                       connection.commit ()
+                   except Exception:
+                       print ( "Error" )
+       connection.close ()
+       def walls():
+           response1=requests.get ( 'https://api.vk.com/method/wall.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'domain': self.id,
+                                    } )
+           data=response1.json ()['response']['items']
+           wall.extend ( data )
+           return wall
+       wall=walls()
+
+       connection=pymysql.connect ( host='127.0.0.1',
+                                     user='root',
+                                     password='Basketboll2002',
+                                     db='mydb',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor )
+
+
+       for item in wall:
+                try:
+
+                    with connection.cursor () as cursor:
+                        # Create a new record
+                        sql="INSERT INTO `wall` (`№`,`id`,`text`,`likes`,`comments`,`reposts`) VALUES (%s,%s,%s,%s,%s,%s )"
+                        cursor.execute ( sql, (
+                            item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'text' ),
+                            item.get ( 'likes' ).get ( 'count' ),
+                            item.get ( 'comments' ).get ( 'count' ),
+                            item.get ( 'reposts' ).get ( 'count' )) )
+                        # connection is not autocommit by default. So you must commit to save
+                        # your changes.
+                    connection.commit ()
+                except Exception:
+                    print ( "Error" )
+       connection.close ()
+
+       def friends():
+           response1=requests.get ( 'https://api.vk.com/method/friends.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'user_id': self.ids,
+                                        'fields': self.fields
+                                    } )
+           data=response1.json ()['response']['items']
+           friend.extend ( data )
+           return friend
+       friend=friends()
+
+       connection=pymysql.connect ( host='127.0.0.1',
+                                        user='root',
+                                        password='Basketboll2002',
+                                        db='mydb',
+                                        charset='utf8mb4',
+                                        cursorclass=pymysql.cursors.DictCursor )
+
+
+       for item in friend:
+                   try:
+
+                       with connection.cursor () as cursor:
+                           # Create a new record
+                           sql="INSERT INTO `friends` (`№`,`id`,`first_name`,`last_name`) VALUES (%s,%s,%s,%s )"
+                           cursor.execute ( sql, (
+                               item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'first_name' ),
+                               item.get ( 'last_name' )) )
+                           # connection is not autocommit by default. So you must commit to save
+                           # your changes.
+                       connection.commit ()
+                   except Exception:
+                       print ( "Error" )
+       connection.close ()
+
+       for item in wall:
+        id_wall=item.get ( 'id' )
+
+       def likes():
+           try:
+               type='post'
+               response1=requests.get ( 'https://api.vk.com/method/likes.getList',
+                                        params={
+                                            'access_token': token,
+                                            'v': version,
+                                            'owner_id': self.ids,
+                                            'type': type,
+                                            'item_id': id_wall
+                                        } )
+               data=response1.json ()['response']['items']
+               like.extend ( data )
+               return like
+           except Exception:
+               print('error')
+
+       like=likes()
+
+       connection=pymysql.connect ( host='127.0.0.1',
+                                     user='root',
+                                     password='Basketboll2002',
+                                     db='mydb',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor )
+
+       try:
+           for item in like:
+               try:
+                   with connection.cursor () as cursor:
+                       # Create a new record
+                       sql="INSERT INTO `likes` (`№`,`id_wall`,`id_friends`) VALUES (%s,%s ,%s)"
+                       cursor.execute ( sql, (
+                           item.get ( '№', [self.offset] ), item.get ( 'id_wall', [id_wall] ), item) )
+                       # connection is not autocommit by default. So you must commit to save
+                       # your changes.
+                   connection.commit ()
+               except Exception as e:
+                   print ( e )
+           connection.close ()
+       except Exception:
+           print('ww')
+
+
 
 if __name__ == "__main__":
-    People5=People('id169916098','169916098','5')
-    People5.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People5.users(), file )
-    People5.sql ()
+    People19=People ( 'id444545086', '18864498', '19' )
+    People19.users ()
 
-    People6=People('id287961694','287961694','6')
-    People6.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People6.users(), file )
-    People6.sql ()
+    People20=People ( 'id547652798', '547652798', '20' )
+    People20.users ()
 
-    People7=People('id226159703','226159703','7')
-    People7.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People7.users(), file )
-    People7.sql ()
+#    People21=People ( 'id72511618', '72511618', '21' )
+#    People21.users ()
 
-    People8=People('id207484334','207484334','8')
-    People8.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People8.users(), file )
-    People8.sql ()
+    People22=People ( 'id192260451', '192260451', '22' )
+    People22.users ()
 
-
-    People13=People('id164519173','164519173','13')
-    People13.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People13.users(), file )
-    People13.sql ()
-
-    People14=People('id253456309','253456309','14')
-    People14.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People14.users(), file )
-    People14.sql ()
-
-    People15=People('id203884671','203884671','15')
-    People15.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People15.users(), file )
-    People15.sql ()
-
-    People16=People('id205840517','205840517','16')
-    People16.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-      json.dump (People16.users(), file )
-    People16.sql ()
-
-    People17=People('id487119415','487119415','17')
-    People17.users()
-    with open ( 'vk.json', "w", encoding='utf-8' ) as file:
-     json.dump (People17.users(), file )
-    People17.sql ()
+    People23=People ( 'id132033643', '132033643', '23' )
+    People23.users ()
 
 
