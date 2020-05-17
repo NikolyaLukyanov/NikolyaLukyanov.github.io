@@ -1,7 +1,8 @@
 import pymysql.cursors
 import requests
+import time
 
-token='e04fb00c2d8a47d28dbbb4561467a308cbc362af802cc185c53ddb943891f6a2f4829eb1a23f14ecf385c'
+token='8c7ea3b038586da9fd390e3424f3aa46e0164e3e4ccc8996dab7ca24ee8c4131d6d61919e1aeeff6f421c'
 version=5.103
 extended=1
 class People(object):
@@ -11,6 +12,7 @@ class People(object):
         self.ids=ids
         self.offset=offset
 
+
     def users(self):
        user=[]
        group=[]
@@ -18,6 +20,7 @@ class People(object):
        friend=[]
 
        def users2():
+           time.sleep(0.5)
            response=requests.get ( 'https://api.vk.com/method/users.get',
                                    params={
                                        'access_token': token,
@@ -53,7 +56,7 @@ class People(object):
                     print ( "Error" )
        connection.close ()
        def grups():
-
+           time.sleep ( 0.5 )
            response2=requests.get ( 'https://api.vk.com/method/groups.get',
                                     params={
                                         'access_token': token,
@@ -88,45 +91,9 @@ class People(object):
                    except Exception:
                        print ( "Error" )
        connection.close ()
-       def walls():
-           response1=requests.get ( 'https://api.vk.com/method/wall.get',
-                                    params={
-                                        'access_token': token,
-                                        'v': version,
-                                        'domain': self.id,
-                                    } )
-           data=response1.json ()['response']['items']
-           wall.extend ( data )
-           return wall
-       wall=walls()
-
-       connection=pymysql.connect ( host='127.0.0.1',
-                                     user='root',
-                                     password='Basketboll2002',
-                                     db='mydb',
-                                     charset='utf8mb4',
-                                     cursorclass=pymysql.cursors.DictCursor )
-
-
-       for item in wall:
-                try:
-                    id_wall=item.get ( 'id' )
-                    with connection.cursor () as cursor:
-                        # Create a new record
-                        sql="INSERT INTO `wall` (`№`,`id`,`text`,`likes`,`comments`,`reposts`) VALUES (%s,%s,%s,%s,%s,%s )"
-                        cursor.execute ( sql, (
-                            item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'text' ),
-                            item.get ( 'likes' ).get ( 'count' ),
-                            item.get ( 'comments' ).get ( 'count' ),
-                            item.get ( 'reposts' ).get ( 'count' )) )
-                        # connection is not autocommit by default. So you must commit to save
-                        # your changes.
-                    connection.commit ()
-                except Exception:
-                    print ( "Error" )
-       connection.close ()
 
        def friends():
+           time.sleep ( 0.5 )
            response1=requests.get ( 'https://api.vk.com/method/friends.get',
                                     params={
                                         'access_token': token,
@@ -162,6 +129,109 @@ class People(object):
                    except Exception:
                        print ( "Error" )
        connection.close ()
+       def walls():
+           time.sleep ( 0.5 )
+           response1=requests.get ( 'https://api.vk.com/method/wall.get',
+                                    params={
+                                        'access_token': token,
+                                        'v': version,
+                                        'domain': self.id,
+                                    } )
+           data=response1.json ()['response']['items']
+           wall.extend ( data )
+           return wall
+       wall=walls()
+
+       connection=pymysql.connect ( host='127.0.0.1',
+                                     user='root',
+                                     password='Basketboll2002',
+                                     db='mydb',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor )
+
+
+       for item in wall:
+                try:
+                    with connection.cursor () as cursor:
+                        # Create a new record
+                        sql="INSERT INTO `wall` (`№`,`id`,`text`,`likes`,`comments`,`reposts`) VALUES (%s,%s,%s,%s,%s,%s )"
+                        cursor.execute ( sql, (
+                            item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'text' ),
+                            item.get ( 'likes' ).get ( 'count' ),
+                            item.get ( 'comments' ).get ( 'count' ),
+                            item.get ( 'reposts' ).get ( 'count' )) )
+                        # connection is not autocommit by default. So you must commit to save
+                        # your changes.
+                    connection.commit ()
+                except Exception:
+                    print ( "Error" )
+       connection.close ()
+
+       for item in wall:
+           likes (item)
+
+class likes():
+
+        def __init__(self, item):
+            self.owner_id=item.get('owner_id')
+            self.id_wall=item.get('id')
+            def likes():
+                like=[]
+                try:
+                    time.sleep ( 0.5 )
+                    type='post'
+                    response1=requests.get ( 'https://api.vk.com/method/likes.getList',
+                                             params={
+                                                 'access_token': token,
+                                                 'v': version,
+                                                 'owner_id': self.owner_id,
+                                                 'type': type,
+                                                 'item_id': self.id_wall
+                                             } )
+                    data=response1.json ()['response']['items']
+                    like.extend ( data )
+                    return like
+                except Exception as e:
+                    print(e)
+
+            like=likes ()
+            try:
+                like=str ( like )
+                like=like.split ( "," )
+                like=" ".join ( like )
+            except Exception  as e:
+                print ( e )
+            dict={}
+            id_friends=[]
+            id_friends.append ( {
+                "id_friends": like} )
+            dict["id_friends"]=id_friends
+
+            connection=pymysql.connect ( host='127.0.0.1',
+                                         user='root',
+                                         password='Basketboll2002',
+                                         db='mydb',
+                                         charset='utf8mb4',
+                                         cursorclass=pymysql.cursors.DictCursor )
+
+            try:
+                for item in id_friends:
+                    try:
+                        with connection.cursor () as cursor:
+                            # Create a new record
+                            sql="INSERT INTO `likes` (`id_wall`,`id_friends`) VALUES (%s ,%s)"
+                            cursor.execute ( sql, (
+                                item.get ( 'id_wall', [self.id_wall] ),
+                                item.get ( 'id_friends')) )
+                            # connection is not autocommit by default. So you must commit to save
+                            # your changes.
+                        connection.commit ()
+                    except Exception as e:
+                        print ( e )
+                connection.close ()
+            except Exception:
+                print ( 'ww' )
+
 
 
 
@@ -234,13 +304,19 @@ if __name__ == "__main__":
 
     People18=People ( 'id18864498', '18864498', '18' )
     People18.users ()
-import os
-os.startfile(r'C:/Users/nikol/OneDrive/Рабочий стол/Курсовая/Users2.py')
+
+    People19=People ( 'id444545086', '18864498', '19' )
+    People19.users ()
+
+    People20=People ( 'id547652798', '547652798', '20' )
+    People20.users ()
 
 
+    People22=People ( 'id192260451', '192260451', '22' )
+    People22.users ()
 
+    People23=People ( 'id132033643', '132033643', '23' )
+    People23.users ()
 
-
-
-
-
+    People21=People ( 'id72511618', '72511618', '21' )
+    People21.users ()
