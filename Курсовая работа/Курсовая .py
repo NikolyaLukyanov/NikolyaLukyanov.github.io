@@ -55,29 +55,30 @@ class People(object):
                 except Exception:
                     print ( "Error" )
        connection.close ()
-       def grups():
-           time.sleep ( 0.5 )
-           response2=requests.get ( 'https://api.vk.com/method/groups.get',
+       try:
+           def grups():
+               time.sleep ( 0.5 )
+               response2=requests.get ( 'https://api.vk.com/method/groups.get',
                                     params={
                                         'access_token': token,
                                         'v': version,
                                         'user_id': self.ids,
                                         'extended': extended,
                                     } )
-           data=response2.json ()['response']['items']
-           group.extend ( data )
-           return group
-       group=grups()
+               data=response2.json ()['response']['items']
+               group.extend ( data )
+               return group
+           group=grups()
 
 
-       connection=pymysql.connect ( host='127.0.0.1',
+           connection=pymysql.connect ( host='127.0.0.1',
                                         user='root',
                                         password='Basketboll2002',
                                         db='mydb',
                                         charset='utf8mb4',
                                         cursorclass=pymysql.cursors.DictCursor )
 
-       for item in group:
+           for item in group:
                    try:
                        with connection.cursor () as cursor:
                            # Create a new record
@@ -90,7 +91,9 @@ class People(object):
                        connection.commit ()
                    except Exception:
                        print ( "Error" )
-       connection.close ()
+           connection.close ()
+       except Exception:
+           print ( "Конец" )
 
        def friends():
            time.sleep ( 0.5 )
