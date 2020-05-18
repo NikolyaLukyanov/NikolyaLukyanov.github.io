@@ -2,7 +2,7 @@ import pymysql.cursors
 import requests
 import time
 
-token='8c7ea3b038586da9fd390e3424f3aa46e0164e3e4ccc8996dab7ca24ee8c4131d6d61919e1aeeff6f421c'
+token='fbe039e0f062f04ed948134fe7e041f6356b8bd50de9e627976231ac3c956425de785b6186dc66083b9bf'
 version=5.103
 extended=1
 class People(object):
@@ -157,17 +157,17 @@ class People(object):
                 try:
                     with connection.cursor () as cursor:
                         # Create a new record
-                        sql="INSERT INTO `wall` (`№`,`id`,`text`,`likes`,`comments`,`reposts`) VALUES (%s,%s,%s,%s,%s,%s )"
+                        sql="INSERT INTO `wall` (`№`,`id`,`likes`,`comments`,`reposts`) VALUES (%s,%s,%s,%s,%s )"
                         cursor.execute ( sql, (
-                            item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'text' ),
+                            item.get ( '№', [self.offset] ), item.get ( 'id' ),
                             item.get ( 'likes' ).get ( 'count' ),
                             item.get ( 'comments' ).get ( 'count' ),
                             item.get ( 'reposts' ).get ( 'count' )) )
                         # connection is not autocommit by default. So you must commit to save
                         # your changes.
                     connection.commit ()
-                except Exception:
-                    print ( "Error" )
+                except Exception as e:
+                    print ( e )
        connection.close ()
 
        for item in wall:
