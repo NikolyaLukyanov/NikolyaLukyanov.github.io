@@ -180,9 +180,9 @@ class likes():
         def __init__(self, item):
             self.owner_id=item.get('owner_id')
             self.id_wall=item.get('id')
-        def likes(self):
-                like=[]
-                def likes2():
+
+            def likes():
+                    like=[]
                     try:
                         time.sleep ( 0.5 )
                         type='post'
@@ -200,28 +200,28 @@ class likes():
                     except Exception as e:
                         print ( e )
 
-                like=likes2()
-                try:
+            like=likes()
+            try:
                     like=str ( like )
                     like=like.split ( "," )
                     like=" ".join ( like )
 
-                except Exception  as e:
+            except Exception  as e:
                     print ( e )
-                dict={}
-                id_friends=[]
-                id_friends.append ( {
+            dict={}
+            id_friends=[]
+            id_friends.append ( {
                     "id_friends": like} )
-                dict["id_friends"]=id_friends
+            dict["id_friends"]=id_friends
 
-                connection=pymysql.connect ( host='127.0.0.1',
+            connection=pymysql.connect ( host='127.0.0.1',
                                              user='root',
                                              password='Basketboll2002',
                                              db='mydb',
                                              charset='utf8mb4',
                                              cursorclass=pymysql.cursors.DictCursor )
 
-                try:
+            try:
                     for item in id_friends:
                         try:
                             with connection.cursor () as cursor:
@@ -235,8 +235,8 @@ class likes():
                             connection.commit ()
                         except Exception as e:
                             print ( e )
-                    connection.close ()
-                except Exception:
+                        connection.close ()
+            except Exception:
                     print ( 'ww' )
 
 
