@@ -2,11 +2,11 @@ import pymysql.cursors
 import requests
 import time
 
-token='fbe039e0f062f04ed948134fe7e041f6356b8bd50de9e627976231ac3c956425de785b6186dc66083b9bf'
+token='38727f5f999951b529a65eed2ade4af16f949893d8d49157864cdc2e5c161fc547ff1b3e18b8dd0bcca05'
 version=5.103
 extended=1
+fields='bdate, mobile_phone,home_phone,friends,music,about'
 class People(object):
-    fields='bdate, mobile_phone,home_phone,friends,music,about'
     def __init__(self, id, ids,offset):
         self.id= id
         self.ids=ids
@@ -26,7 +26,7 @@ class People(object):
                                        'access_token': token,
                                        'v': version,
                                        'user_ids': self.id,
-                                       'fields': self.fields
+                                       'fields': fields
 
                                    } )
            data=response.json ()['response']
@@ -96,13 +96,15 @@ class People(object):
            print ( "Конец" )
 
        def friends():
+           fields='bdate'
            time.sleep ( 0.5 )
            response1=requests.get ( 'https://api.vk.com/method/friends.get',
                                     params={
                                         'access_token': token,
                                         'v': version,
                                         'user_id': self.ids,
-                                        'fields': self.fields
+                                        'fields':fields
+
                                     } )
            data=response1.json ()['response']['items']
            friend.extend ( data )
@@ -122,10 +124,10 @@ class People(object):
 
                        with connection.cursor () as cursor:
                            # Create a new record
-                           sql="INSERT INTO `friends` (`№`,`id`,`first_name`,`last_name`) VALUES (%s,%s,%s,%s )"
+                           sql="INSERT INTO `friends` (`№`,`id`,`first_name`,`last_name`,`bdate`) VALUES (%s,%s,%s,%s,%s )"
                            cursor.execute ( sql, (
                                item.get ( '№', [self.offset] ), item.get ( 'id' ), item.get ( 'first_name' ),
-                               item.get ( 'last_name' )) )
+                               item.get ( 'last_name' ),item.get ( 'bdate' )) )
                            # connection is not autocommit by default. So you must commit to save
                            # your changes.
                        connection.commit ()
@@ -178,62 +180,64 @@ class likes():
         def __init__(self, item):
             self.owner_id=item.get('owner_id')
             self.id_wall=item.get('id')
-            def likes():
+        def likes(self):
                 like=[]
-                try:
-                    time.sleep ( 0.5 )
-                    type='post'
-                    response1=requests.get ( 'https://api.vk.com/method/likes.getList',
-                                             params={
-                                                 'access_token': token,
-                                                 'v': version,
-                                                 'owner_id': self.owner_id,
-                                                 'type': type,
-                                                 'item_id': self.id_wall
-                                             } )
-                    data=response1.json ()['response']['items']
-                    like.extend ( data )
-                    return like
-                except Exception as e:
-                    print(e)
-
-            like=likes ()
-            try:
-                like=str ( like )
-                like=like.split ( "," )
-                like=" ".join ( like )
-            except Exception  as e:
-                print ( e )
-            dict={}
-            id_friends=[]
-            id_friends.append ( {
-                "id_friends": like} )
-            dict["id_friends"]=id_friends
-
-            connection=pymysql.connect ( host='127.0.0.1',
-                                         user='root',
-                                         password='Basketboll2002',
-                                         db='mydb',
-                                         charset='utf8mb4',
-                                         cursorclass=pymysql.cursors.DictCursor )
-
-            try:
-                for item in id_friends:
+                def likes2():
                     try:
-                        with connection.cursor () as cursor:
-                            # Create a new record
-                            sql="INSERT INTO `likes` (`id_wall`,`id_friends`) VALUES (%s ,%s)"
-                            cursor.execute ( sql, (
-                                item.get ( 'id_wall', [self.id_wall] ),
-                                item.get ( 'id_friends')) )
-                            # connection is not autocommit by default. So you must commit to save
-                            # your changes.
-                        connection.commit ()
+                        time.sleep ( 0.5 )
+                        type='post'
+                        response1=requests.get ( 'https://api.vk.com/method/likes.getList',
+                                                 params={
+                                                     'access_token': token,
+                                                     'v': version,
+                                                     'owner_id': self.owner_id,
+                                                     'type': type,
+                                                     'item_id': self.id_wall
+                                                 } )
+                        data=response1.json ()['response']['items']
+                        like.extend ( data )
+                        return like
                     except Exception as e:
                         print ( e )
-                connection.close ()
-            except Exception:
-                print ( 'ww' )
+
+                like=likes2()
+                try:
+                    like=str ( like )
+                    like=like.split ( "," )
+                    like=" ".join ( like )
+
+                except Exception  as e:
+                    print ( e )
+                dict={}
+                id_friends=[]
+                id_friends.append ( {
+                    "id_friends": like} )
+                dict["id_friends"]=id_friends
+
+                connection=pymysql.connect ( host='127.0.0.1',
+                                             user='root',
+                                             password='Basketboll2002',
+                                             db='mydb',
+                                             charset='utf8mb4',
+                                             cursorclass=pymysql.cursors.DictCursor )
+
+                try:
+                    for item in id_friends:
+                        try:
+                            with connection.cursor () as cursor:
+                                # Create a new record
+                                sql="INSERT INTO `likes` (`id_wall`,`id_friends`) VALUES (%s ,%s)"
+                                cursor.execute ( sql, (
+                                    item.get ( 'id_wall', [self.id_wall] ),
+                                    item.get ( 'id_friends' )) )
+                                # connection is not autocommit by default. So you must commit to save
+                                # your changes.
+                            connection.commit ()
+                        except Exception as e:
+                            print ( e )
+                    connection.close ()
+                except Exception:
+                    print ( 'ww' )
 
 
 
