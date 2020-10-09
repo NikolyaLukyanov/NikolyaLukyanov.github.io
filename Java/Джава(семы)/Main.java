@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        while (true) {
+
             Scanner scan = new Scanner(System.in);
             System.out.println("Введите а:");
             double a = scan.nextDouble();
@@ -17,10 +17,37 @@ public class Main {
 
             double t1 = l1.Trap(a, b, ha);
             System.out.println("Ответ " + t1);
+            more();
 
         }
+
+    public static void more() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("do u want again? If NO print 'exit' ");
+        String input = scanner.nextLine();
+        if (input.equals("exit")) {
+        } else {
+            main();
+        }
     }
-}
+
+        private static void main(){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите а:");
+            double a = scan.nextDouble();
+            System.out.println("Введите b:");
+            double b = scan.nextDouble();
+            System.out.println("Введите ha:");
+            double ha = scan.nextDouble();
+            Trapezia l1 = new Trapezia();
+
+            double t1 = l1.Trap(a, b, ha);
+            System.out.println("Ответ " + t1);
+            more();
+        }
+
+
+    }
 class Trapezia {
 
 
@@ -38,4 +65,5 @@ class Trapezia {
         for(int i = 1; i < n; i++)
             result += f(a + h*i );
         return h*result;
-    }}
+    }
+    }
